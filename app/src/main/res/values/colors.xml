@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#2B5AED</color>
+    <color name="color_primary_dark">#1E3FA0</color>
+    <color name="color_accent">#4D80F0</color>
+
+    <color name="status_pending">#6B7280</color>
+    <color name="status_applied">#F59E0B</color>
+    <color name="status_accepted">#10B981</color>
+    <color name="status_rejected">#EF4444</color>
+    <color name="status_failed">#F97316</color>
+
+    <color name="text_primary">#1F2937</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_hint">#9CA3AF</color>
+
+    <color name="bg_color">#F8F9FA</color>
+    <color name="white">#FFFFFF</color>
+</resources>
