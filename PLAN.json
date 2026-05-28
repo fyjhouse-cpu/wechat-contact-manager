@@ -1,0 +1,1 @@
+{"project_name": "WeChatContactManager", "package_name": "com.operit.wechatcontact", "app_name": "加微助手", "description": "微信联系人添加管理助手", "language": "Kotlin", "minSdk": 26, "targetSdk": 34, "compileSdk": 34, "architecture": "MVVM + Room + Hilt", "ui_framework": "ViewBinding + Material Design 3"}
