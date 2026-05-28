@@ -26,16 +26,17 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Download Gradle Wrapper JAR
+      - name: Setup Gradle 7.5 and generate wrapper
         run: |
-          mkdir -p gradle/wrapper
-          curl -L -o gradle/wrapper/gradle-wrapper.jar \
-            https://github.com/gradle/gradle/raw/v7.5.0/gradle/wrapper/gradle-wrapper.jar
+          cd /tmp
+          curl -L -o gradle-7.5-bin.zip https://services.gradle.org/distributions/gradle-7.5-bin.zip
+          unzip -q gradle-7.5-bin.zip
+          export PATH=/tmp/gradle-7.5/bin:$PATH
+          cd $GITHUB_WORKSPACE
+          gradle wrapper --gradle-version 7.5
 
       - name: Build Debug APK
-        run: |
-          chmod +x gradlew
-          ./gradlew assembleDebug
+        run: ./gradlew assembleDebug
         env:
           ANDROID_SDK_ROOT: ${{ env.ANDROID_SDK_ROOT }}
 
