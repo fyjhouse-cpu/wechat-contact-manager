@@ -26,11 +26,11 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+      - name: Generate Gradle Wrapper
+-        run: |
+          gradle wrapper --gradle-version 7.5 --distribution-type bin
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug
+      - name: Build Debug APKJ        run: ./gradlew assembleDebug
         env:
           ANDROID_SDK_ROOT: ${{ env.ANDROID_SDK_ROOT }}
 
@@ -38,8 +38,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: wechat-contact-manager-debug
-          path: app/build/outputs/apk/debug/*.apk
-          retention-days: 30
+          path: app/build/outputs/apk/debug/*.apk          retention-days: 30
 
       - name: List build outputs
         if: always()
